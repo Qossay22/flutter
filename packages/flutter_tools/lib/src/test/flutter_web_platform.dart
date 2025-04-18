@@ -473,11 +473,11 @@ class FlutterWebPlatform extends PlatformPlugin {
         // https://github.com/flutter/flutter/issues/135700
         try {
           final ChromeTab chromeTab =
-              (await getChromeTabGuarded(_browserManager!._browser.chromeConnection, (
+              await getChromeTabGuarded(_browserManager!._browser.chromeConnection, (
                 ChromeTab tab,
               ) {
                 return tab.url.contains(_browserManager!._browser.url!);
-              }))!;
+              });
           final WipConnection connection = await chromeTab.connect();
           final WipResponse response = await connection.sendCommand(
             'Page.captureScreenshot',

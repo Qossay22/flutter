@@ -547,7 +547,7 @@ Future<void> _copyNativeCodeAssetsForOS(
   // bundle as part of the app.
   assetTargetLocations = <CodeAsset, KernelAsset>{
     for (final CodeAsset codeAsset in assetTargetLocations.keys)
-      if (codeAsset.linkMode is DynamicLoadingBundled) codeAsset: assetTargetLocations[codeAsset]!,
+      if (codeAsset.linkMode is DynamicLoadingBundled) codeAsset: assetTargetLocations[codeAsset],
   };
 
   if (assetTargetLocations.isEmpty) {

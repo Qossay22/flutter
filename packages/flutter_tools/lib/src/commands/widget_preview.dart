@@ -46,7 +46,7 @@ class WidgetPreviewCommand extends FlutterCommand {
 /// Common utilities for the 'start' and 'clean' commands.
 mixin WidgetPreviewSubCommandMixin on FlutterCommand {
   FlutterProject getRootProject() {
-    final ArgResults results = argResults!;
+    final ArgResults results = argResults;
     final Directory projectDir;
     if (results.rest case <String>[final String directory]) {
       projectDir = globals.fs.directory(directory);

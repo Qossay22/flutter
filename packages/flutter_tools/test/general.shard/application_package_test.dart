@@ -150,10 +150,10 @@ void main() {
         );
 
         final ApplicationPackage applicationPackage =
-            (await ApplicationPackageFactory.instance!.getPackageForPlatform(
+            await ApplicationPackageFactory.instance!.getPackageForPlatform(
               TargetPlatform.android_arm,
               applicationBinary: apkFile,
-            ))!;
+            );
         expect(applicationPackage.name, 'app-debug.apk');
         expect(applicationPackage, isA<PrebuiltApplicationPackage>());
         expect(
@@ -223,7 +223,7 @@ void main() {
             ApkManifestData.parseFromXmlDump(
               _aaptDataWithExplicitEnabledAndMainLauncherActivity,
               BufferLogger.test(),
-            )!;
+            );
 
         expect(data, isNotNull);
         expect(data.packageName, 'io.flutter.examples.hello_world');
@@ -238,7 +238,7 @@ void main() {
             ApkManifestData.parseFromXmlDump(
               _aaptDataWithDefaultEnabledAndMainLauncherActivity,
               BufferLogger.test(),
-            )!;
+            );
 
         expect(data, isNotNull);
         expect(data.packageName, 'io.flutter.examples.hello_world');
@@ -248,7 +248,7 @@ void main() {
 
     testWithoutContext('Parses manifest with a dist namespace', () {
       final ApkManifestData data =
-          ApkManifestData.parseFromXmlDump(_aaptDataWithDistNamespace, BufferLogger.test())!;
+          ApkManifestData.parseFromXmlDump(_aaptDataWithDistNamespace, BufferLogger.test());
 
       expect(data, isNotNull);
       expect(data.packageName, 'io.flutter.examples.hello_world');
@@ -313,7 +313,7 @@ void main() {
             ApkManifestData.parseFromXmlDump(
               _aaptDataWithLauncherAndDefaultActivity,
               BufferLogger.test(),
-            )!;
+            );
 
         expect(data, isNotNull);
         expect(data.packageName, 'io.flutter.examples.hello_world');

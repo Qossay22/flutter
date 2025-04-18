@@ -118,7 +118,7 @@ void main() {
         fileSystem,
         logger,
       );
-      final CCompilerConfig result = (await runner.cCompilerConfig)!;
+      final CCompilerConfig result = await runner.cCompilerConfig;
       expect(result.compiler, Uri.file('/some/path/to/clang'));
     },
   );

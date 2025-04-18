@@ -538,7 +538,7 @@ class HotRunner extends ResidentRunner {
           fullRestart: fullRestart,
           pathToReload: getReloadPath(fullRestart: fullRestart, swap: _swap),
           invalidatedFiles: invalidationResult.uris!,
-          packageConfig: invalidationResult.packageConfig!,
+          packageConfig: invalidationResult.packageConfig,
           dillOutputPath: dillOutputPath,
         ),
       );
